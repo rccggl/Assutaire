@@ -34,7 +34,7 @@ class Card():
 
     # define the card
     def getName(self) -> str:
-        return "%s di %s" % self.value, self.seed
+        return '{} di {}'.format(self.value, self.seed)
 
 
     # protected
