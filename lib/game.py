@@ -4,11 +4,6 @@
 
 class Game():
 
-
-    # play a game
-    def play(self):
-        # init the game
-
-
-
-
+    def __init__(self):
+        #setup a new game
+        print("Ready to play the game!")

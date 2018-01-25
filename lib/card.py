@@ -6,44 +6,42 @@ class Card():
 
     # constructor
     def __init__(self, value, seed):
-        self.seed = seed
-        self.value = value
-
-        self.validSeeds = ['denari','spade','bastoni','coppe']
-        self.validValues = ['asso','due','tre','quattro','cinque','sei','sette','fante','cavallo','re']
+        self.__seed = seed
+        self.__value = value
 
 
+    def __str__(self) -> str:
+        """
+        Print myself
 
-    #
-    def isValidSeed(self,seed) -> bool:
-        if seed in self.validSeeds:
-            return True
+        :return:
+        """
+        return ' -- \n|{}{}|\n -- '.format(self.value, self.seed)
+
+
+    @property
+    def name(self) -> str:
+        """
+        Print myself in form of 3B
+
+        :return:
+        """
+        return '{}{}'.format(self.value, self.seed)
+
+
+    @property
+    def seed(self):
+        if isinstance(self.__seed, str):
+            return self.__seed
         else:
-            return False
+            return "invalid seed"
+
+
+    @property
+    def value(self):
+        return self.__value
 
 
 
-    #
-    def isValidValue(self,value) -> bool:
-        if value in self.validValues:
-            return True
-        else:
-            return False
 
-
-
-    # define the card
-    def getName(self) -> str:
-        return '{} di {}'.format(self.value, self.seed)
-
-
-    # protected
-    def validateCard(self) -> bool:
-        if self.seed in self.validSeeds:
-            if self.value in self.validValues:
-                return True
-            else:
-                return False
-        else:
-            return False
 
